@@ -22,20 +22,4 @@ class GuitarController extends Controller
         $likutis = StorageLeftoverModel::where('produktas', $guitar->produkto_ID)->sum('likutis');
         return view('guitarInfo')->with('guitar', $guitar)->with('tipas', $tipas)->with('likutis', $likutis);
     }
-
-    /*
-    public function getGuitarAku(){
-        $guitars = GuitarModel::where('tipas', 1)->get();
-        return view('guitar')->with('guitars',$guitars)->with('type', "Akustines");
-    }
-
-    public function getGuitarEle(){
-        $guitars = GuitarModel::where('tipas', 2)->get();
-        return view('guitar')->with('guitars',$guitars)->with('type', "Elektrines");
-    }
-
-    public function getGuitarBos(){
-        $guitars = GuitarModel::where('tipas', 3)->get();
-        return view('guitar')->with('guitars',$guitars)->with('type', "Bosines");
-    }*/
 }

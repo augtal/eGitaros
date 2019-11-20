@@ -15,7 +15,7 @@
                     @if($likutis > 5)
                             5+
                     @elseif($likutis > 0 && $likutis < 5)
-                            $likutis
+                            {{$likutis}}
                     @else
                             sandelyje nera prekes
                     @endif
