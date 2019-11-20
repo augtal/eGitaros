@@ -17,9 +17,8 @@ Route::get('/about', 'PagesController@about');
 
 Route::get('/contact', 'ContactsController@contact');
 
-Route::get('/gitAku', 'GuitarController@getGuitarAku');
+Route::get('/guitar', 'PagesController@home');
 
-Route::get('/gitEle', 'GuitarController@getGuitarEle');
+Route::get('/guitar/{num}', 'GuitarController@getAllGuitars');
 
-Route::get('/gitBos', 'GuitarController@getGuitarBos');
-
+Route::get('/guitar/{num}/{id}', 'GuitarController@getGuitar');

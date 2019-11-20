@@ -22,7 +22,7 @@
 
 <div id="body">
     <div id="header">
-        <h3 id="slogan"><a href="./">eGitaros</a></h3>
+        <h3 id="slogan"><a href="/">eGitaros</a></h3>
     </div>
     <div id="content">
         <div class="navbar">
@@ -32,14 +32,14 @@
                 </button>
 
                 <div class="dropdown-content" id="myDropdown">
-                    <a href="./gitAku">Akustines</a>
-                    <a href="./gitEle">Elektrines</a>
-                    <a href="./gitBos">Bosines</a>
+                    <a href="/guitar/1">Akustines</a>
+                    <a href="/guitar/2">Elektrines</a>
+                    <a href="/guitar/3">Bosines</a>
                 </div>
             </div>
 
-            <li style="float:right"><a href="./about">Apie mus</a></li>
-            <li style="float:right"><a href="./contact">Kontaktai</a></li>
+            <li style="float:right"><a href="/about">Apie mus</a></li>
+            <li style="float:right"><a href="/contact">Kontaktai</a></li>
         </div>
 
         @yield('content')

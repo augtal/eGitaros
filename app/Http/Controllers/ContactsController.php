@@ -8,11 +8,7 @@ use App\ContactModel;
 class ContactsController extends Controller
 {
     public function contact(){
-        $contacts = ContactModel::all();
+        $contacts = ContactModel::paginate(2);
         return view('contacts')->with('contacts',$contacts);
     }
-
-    /*public function contact(){
-        return ContactModel::all();
-    }*/
 }

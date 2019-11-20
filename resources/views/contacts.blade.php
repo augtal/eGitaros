@@ -13,6 +13,10 @@
 
 
                 <div id="contentRight">
+                    <div>
+                    {{$contacts->links()}}
+                    </div>
+
                     @foreach($contacts as $contact)
                     <h2 id="pageTitle">{{$contact->pavadinimas}}</h2>
                     <p>Adresas: {{$contact->adresas}}</p>
