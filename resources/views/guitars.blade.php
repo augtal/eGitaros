@@ -18,7 +18,7 @@
                             <h1>{{$guitar->pavadinimas}}</h1>
                             <p class="price">{{$guitar->kaina}} &euro;</p>
                             <button><a href="/guitar/{{$guitar->tipas}}/{{$guitar->pavadinimas}}">Placiau</a></button>
-                            <button type="button" disabled>Pirkti</button>
+                            <button><a href="/atc/{{$guitar->produkto_ID}}">Pirkti</a></button>
                         </div>
                     </div>
             @endforeach

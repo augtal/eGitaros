@@ -22,3 +22,7 @@ Route::get('/guitar', 'PagesController@home');
 Route::get('/guitar/{num}', 'GuitarController@getAllGuitars');
 
 Route::get('/guitar/{num}/{id}', 'GuitarController@getGuitar');
+
+Route::get('/atc/{id}', 'GuitarController@addToCart');
+
+Route::get('/rfc/{id}', 'GuitarController@removeFromCart');

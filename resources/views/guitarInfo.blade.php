@@ -2,14 +2,12 @@
 
 @section('content')
         <div id="contentLeft">
-            <!--
             <img src="img/{{$guitar->pavadinimas}}.jpg" alt="{{$guitar->pavadinimas}}" style="width:100%">
-            -->
+            <a class = "button" href="/guitar/{{$guitar->tipas}}/">Atgal</a>
         </div>
 
         <div id="contentRight">
-                <div>
-                    <button class="guitar"><a href="/guitar/{{$guitar->tipas}}/">Atgal</a></button>
+                <div class="container">
                     <h3>Pavadinimas: {{$guitar->pavadinimas}}</h3>
                     <h3>Likutis:
                     @if($likutis > 5)
@@ -21,7 +19,7 @@
                     @endif
                     </h3>
                     <h3>Aprasas: {{$guitar->aprasas}}</h3>
-                    <button type="button" disabled>Pirkti</button>
+                    <a class = "button" href="/atc/{{$guitar->produkto_ID}}">Pirkti</a>
                 </div>
         </div>
 @endsection

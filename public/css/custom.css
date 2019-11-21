@@ -43,13 +43,11 @@ a {
 #content {
     width: 900px;
     background-color: #fff;
-    border-left: 1px solid silver;
-    border-right: 1px solid silver;
     float: left;
 }
 
 .navbar {
-    overflow: hidden;
+    height: 46px;
     background-color: #333;
     font-family: Arial, Helvetica, sans-serif;
 }
@@ -61,6 +59,19 @@ a {
     text-align: center;
     padding: 14px 16px;
     text-decoration: none;
+}
+
+.navbar-left {
+    float: left;
+  }
+
+.navbar-right {
+    float: right;
+    position: relative;
+}
+
+#addtocart {
+    width: 250px;
 }
 
 .dropdown {
@@ -106,6 +117,173 @@ a {
     background-color: #ddd;
 }
 
+.badge {
+    background-color: red;
+    border-radius: 10px;
+    color: white;
+    display: inline-block;
+    font-size: 12px;
+    line-height: 1;
+    padding: 3px 7px;
+    text-align: center;
+    vertical-align: middle;
+    white-space: nowrap;
+}
+
+.cartdropbtn {
+    background-color: inherit;
+    font-family: inherit;
+    color: white;
+    padding: 14px 16px;
+    font-size: 16px;
+    border: none;
+  }
+
+  /* The container <div> - needed to position the dropdown content */
+  .cartdropdown {
+    position: relative;
+    display: inline-block;
+  }
+
+  /* Dropdown Content (Hidden by Default) */
+  .cartdropdown-content {
+    display: none;
+    position: absolute;
+    background-color: #f1f1f1;
+    min-width: auto;
+    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+    z-index: 1;
+  }
+
+  /* Links inside the dropdown */
+  .cartdropdown-content a {
+    color: black;
+    padding: 12px 16px;
+    text-decoration: none;
+    display: table;
+  }
+
+  /* Change color of dropdown links on hover */
+  .cartdropdown-content a:hover {background-color: #ddd;}
+
+  /* Show the dropdown menu on hover */
+  .cartdropdown:hover .cartdropdown-content {display: block;}
+
+  /* Change the background color of the dropdown button when the dropdown content is shown */
+  .cartdropdown:hover .cartdropbtn {background-color: red;}
+
+
+.lighter-text {
+    color: #ABB0BE;
+  }
+
+  .main-color-text {
+    color: #00c0cb;
+  }
+
+  *, *:before, *:after {
+    box-sizing: border-box;
+  }
+
+.shopping-cart {
+    background: white;
+    width: 320px;
+    position: absolute;
+    top: 30px;
+    right: -10px;
+    border-radius: 3px;
+    padding: 20px;
+    overflow: hidden;
+    box-shadow: 0 2px 5px 0 rgba(0,0,0,.26)!important;
+    -webkit-transition: all .2s ease;
+    transition: all .2s ease;
+    opacity: 0;
+    -webkit-transform-origin: right top 0;
+    -webkit-transform: scale(0);
+    transform-origin: right top 0;
+    transform: scale(0);
+}
+.shopping-cart.active {
+    opacity: 1;
+    -webkit-transform-origin: right top 0;
+    -webkit-transform: scale(1);
+    transform-origin: right top 0;
+    transform: scale(1);
+}
+
+.shopping-cart-header {
+    border-bottom: 1px solid #E8E8E8;
+    padding-bottom: 15px;
+}
+
+.shopping-cart-header .shopping-cart-total {
+      float: right;
+}
+
+.shopping-cart-items {
+    padding-top: 20px;
+}
+
+.shopping-cart-items li {
+        margin-bottom: 18px;
+}
+
+.shopping-cart-items img {
+      float: left;
+      margin-right: 12px;
+      max-width: 70px;
+      max-height: 70px;
+    }
+
+    .shopping-cart-items .item-name {
+      display: block;
+      font-size: 16px;
+    }
+    .shopping-cart-items .item-detail {
+      display: block;
+      font-size: 12px;
+      text-overflow: ellipsis;
+      white-space: nowrap;
+      overflow: hidden;
+    }
+
+
+    .shopping-cart-items .item-price {
+      color: #00c0cb;
+      margin-right: 8px;
+    }
+
+    .shopping-cart-items .item-quantity {
+      color: #ABB0BE;
+    }
+
+.shopping-cart:after {
+        bottom: 100%;
+        left: 89%;
+        border: solid transparent;
+        content: " ";
+        height: 0;
+        width: 0;
+        position: absolute;
+        pointer-events: none;
+        border-bottom-color: white;
+        border-width: 8px;
+        margin-left: -8px;
+    }
+
+.cart-icon {
+      color: #515783;
+      font-size: 24px;
+      margin-right: 7px;
+      float: left;
+    }
+
+    .clearfix:after {
+        content: "";
+        display: table;
+        clear: both;
+      }
+
 .show {
     display: block;
 }
@@ -148,7 +326,7 @@ body {
     opacity: 0.7;
 }
 
-button guitar {
+.button {
     border: none;
     border-radius: 8px;
     outline: 0;
@@ -157,11 +335,11 @@ button guitar {
     background-color: #000;
     text-align: center;
     cursor: pointer;
-    width: 125px;
+    width: 40%;
     font-size: 18px;
 }
 
-button:hover {
+.button:hover {
     opacity: 0.7;
 }
 
@@ -393,3 +571,4 @@ h2#pageTitle {
     border: 1px solid black;
     border-radius: 10px;
 }
+
