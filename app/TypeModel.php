@@ -6,6 +6,6 @@ use Illuminate\Database\Eloquent\Model;
 
 class TypeModel extends Model
 {
-    protected $table = 'tipai';
+    protected $table = 'tipas';
     protected $primaryKey = 'tipo_ID';
 }
