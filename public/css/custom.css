@@ -28,8 +28,31 @@ a {
     width: 900px;
     height: 70px;
     background-color: #fff;
-    border: 1px solid silver; /* rėmelis */
+}
+
+#header .headerLeft {
+    height: auto;
     float: left;
+}
+
+#header .headerRight {
+    text-decoration: none;
+    margin: 25px 10px 10px 15px;
+    height: auto;
+    float: right;
+}
+
+.userInfo {
+    border: none;
+    border-radius: 8px;
+    outline: 0;
+    padding: 12px;
+    color: white;
+    background-color: #000;
+    text-align: center;
+    cursor: pointer;
+    width: 40%;
+    font-size: 18px;
 }
 
 #slogan {
@@ -310,6 +333,7 @@ body {
 }
 
 .card button {
+    text-decoration: none;
     border: none;
     border-radius: 8px;
     outline: 0;
@@ -318,7 +342,7 @@ body {
     background-color: #000;
     text-align: center;
     cursor: pointer;
-    width: 40%;
+    width: auto;
     font-size: 18px;
 }
 
@@ -327,6 +351,7 @@ body {
 }
 
 .button {
+    text-decoration: none;
     border: none;
     border-radius: 8px;
     outline: 0;
@@ -335,7 +360,7 @@ body {
     background-color: #000;
     text-align: center;
     cursor: pointer;
-    width: 40%;
+    width: auto;
     font-size: 18px;
 }
 
@@ -479,6 +504,27 @@ table {
     float: left; /* blokelio pozicija */
 }
 
+#contentRightFull {
+    width: 100%;
+    min-height: 470px; /* minimalus blokelio aukštis */
+    border-left: 1px solid silver;
+    float: left; /* blokelio pozicija */
+}
+
+#contentRightFull .center {
+    margin: auto;
+    width: 50%;
+    padding: 10px;
+    text-align: center;
+}
+
+#contentRightFull .right {
+    float: right;
+}
+#contentRightFull .left {
+    float: left;
+}
+
 h2#pageTitle {
     font-size: 26px;
     margin: 10px 0px 0px 15px;
@@ -553,6 +599,7 @@ h2#pageTitle {
 
 /* Style the button that is used to open the sidepanel */
 .openbtn {
+    text-decoration: none;
     font-size: 20px;
     cursor: pointer;
     background-color: #111;
@@ -571,4 +618,3 @@ h2#pageTitle {
     border: 1px solid black;
     border-radius: 10px;
 }
-

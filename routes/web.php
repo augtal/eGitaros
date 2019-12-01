@@ -26,3 +26,7 @@ Route::get('/guitar/{num}/{id}', 'GuitarController@getGuitar');
 Route::get('/atc/{id}', 'GuitarController@addToCart');
 
 Route::get('/rfc/{id}', 'GuitarController@removeFromCart');
+
+Auth::routes();
+
+Route::get('/home', 'HomeController@index')->name('home');
