@@ -1,1 +1,3 @@
 # eGitaros
+
+Made public
