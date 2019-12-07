@@ -13,6 +13,8 @@
 
 Route::get('/', 'PagesController@home');
 
+Route::get('/flush', 'PagesController@flush');
+
 Route::get('/about', 'PagesController@about');
 
 Route::get('/contact', 'ContactsController@contact');

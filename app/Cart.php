@@ -17,11 +17,13 @@ class Cart
         }
     }
 
-    public function add($item, $id, $price)
+    public function add($item, $id)
     {
         $storedItem = [ 'qty'=> 0,
-                        'price' => $price,
-                        'item' => $item
+                        'price' => $item->kaina,
+                        'item' => $item,
+                        'img' => $item->pavadinimas,
+                        'pav' => $item->pavadinimas
                       ];
 
         if($this->items){
@@ -31,9 +33,37 @@ class Cart
         }
 
         $storedItem['qty']++;
-        $storedItem['price'] = $item->price * $storedItem['qty'];
+        $storedItem['price'] = $item->kaina * $storedItem['qty'];
         $this->items[$id] = $storedItem;
         $this->totalQty++;
-        $this->totalPrice += $item->price;
+        $this->totalPrice += $item->kaina;
+    }
+
+    public function remove($item, $id)
+    {
+        $storedItem = [ 'qty'=> 0,
+                        'price' => $item->kaina,
+                        'item' => $item,
+                        'img' => $item->pavadinimas,
+                        'pav' => $item->pavadinimas
+                      ];
+
+        if($this->items){
+            if(array_key_exists($id, $this->items)){
+                $storedItem = $this->items[$id];
+            }
+        }
+
+        $this->totalQty--;
+        $this->totalPrice -= $item->kaina;
+
+        $storedItem['qty']--;
+        if($storedItem['qty'] == 0){
+            unset($this->items[$id]);
+            return;
+        }
+        $storedItem['price'] = $item->kaina * $storedItem['qty'];
+        $this->items[$id] = $storedItem;
+
     }
 }

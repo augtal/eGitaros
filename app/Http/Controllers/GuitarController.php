@@ -25,20 +25,45 @@ class GuitarController extends Controller
         return view('guitarInfo')->with('guitar', $guitar)->with('tipas', $tipas)->with('likutis', $likutis);
     }
 
-    /*public function addToCart(Request $request, $id)
+
+    public function addToCart(Request $request, $id)
     {
         $gitara = GuitarModel::find($id);
 
         $oldCart = Session::has('cart') ? Session::get('cart') : null;
         $cart = new Cart($oldCart);
-        $cart->add($gitara, $gitara->produkto_ID, $gitara->kaina);
+        $cart->add($gitara, $gitara->produkto_ID);
 
         $request->session()->put('cart', $cart);
-        dd($request->session()->get('cart'));
+        //dd($request->session()->get('cart'));
         return redirect()->back();
-    }*/
+    }
 
-    public function addToCart(Request $request, $id)
+    public function removeFromCart(Request $request,$id)
+    {
+        if($id == 0){
+            $request->session()->flush();
+        }
+        else
+        {
+            $gitara = GuitarModel::find($id);
+            $cart = session()->get('cart');
+            $cart->remove($gitara, $gitara->produkto_ID);
+
+
+            if($cart->totalQty == 0){
+                $request->session()->flush();
+            }
+        }
+        return redirect()->back();
+    }
+
+
+
+
+
+/*
+    public function addToCart22(Request $request, $id)
     {
         $guitar = GuitarModel::find($id);
 
@@ -70,6 +95,11 @@ class GuitarController extends Controller
             return redirect()->back();
         }
 
+        /*
+        if($cart[$id]['qty']==0){
+                unset($cart[$request->id]);
+                session()->put('cart', $cart);
+        }
 
         //$cart['totalQty']++;
         $cart[$id] = [
@@ -82,23 +112,5 @@ class GuitarController extends Controller
         session()->put('cart', $cart);
         return redirect()->back();
     }
-
-    public function removeFromCart(Request $request,$id)
-    {
-        if($id == 0){
-            $request->session()->flush();
-        }
-        else
-        {
-            $cart = session()->get('cart');
-            if(isset($cart[$id])) {
-                $cart[$id]['qty']--;
-                if($cart[$id]['qty'] <= 0){
-                    unset($cart[$request->id]);
-                }
-                session()->put('cart', $cart);
-            }
-        }
-        return redirect()->back();
-    }
+*/
 }

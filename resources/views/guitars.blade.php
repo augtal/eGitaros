@@ -12,9 +12,9 @@
             @foreach($guitars as $guitar)
                     <div class="column">
                         <div class="card">
-                            <!--
-                                <img src="img/{{$guitar->pavadinimas}}.jpg" alt="{{$guitar->pavadinimas}}" style="width:100%">
-                            -->
+
+                            <img src="{{ asset('storage/images/'.$guitar->pavadinimas.'.jpg') }}" alt="{{$guitar->pavadinimas}}.jpg" style="width:100%">
+
                             <h1>{{$guitar->pavadinimas}}</h1>
                             <p class="price">{{$guitar->kaina}} &euro;</p>
                             <button><a href="/guitar/{{$guitar->tipas}}/{{$guitar->pavadinimas}}">Placiau</a></button>

@@ -73,7 +73,7 @@
 
                             <div class="cartdropdown">
                                 @if(session('cart'))
-                                <button class="cartdropbtn"><i class="fa fa-shopping-cart"></i> Vezimelis <span class="badge">!</span></button>
+                            <button class="cartdropbtn"><i class="fa fa-shopping-cart"></i> Vezimelis <span class="badge">{{ Session::has('cart') ? Session::get('cart')->totalQty : '' }}</span></button>
                                 <div class="cartdropdown-content">
                                     <a href="/rfc/0"><i class="fa fa-trash-o"></i>Isvalyti viska</a>
 
@@ -85,17 +85,18 @@
                                             <th>Kiekis</th>
                                             <th> </th>
                                         </tr>
-                                    @foreach(session('cart') as $id => $preke)
+                                    @foreach(session('cart')->items as $id => $preke)
                                         <tr>
-                                            <th>{{$preke['img']}}</th>
+                                            <th><img src="{{ asset('storage/images/'.$preke['pav'].'.jpg') }}" alt="{{$preke['pav']}}.jpg" height="47" width="47"></th>
                                             <th>{{$preke['pav']}}</th>
-                                            <th>{{$preke['kaina'] }}</th>
+                                            <th>{{$preke['price'] }}</th>
                                             <th>{{$preke['qty'] }}</th>
                                             <th><a href="/rfc/{{$id}}"><i class="fa fa-trash-o"></i></a></th>
                                         </tr>
                                     @endforeach
                                     </table>
 
+                                    <h4>Bendra suma: {{ Session::get('cart')->totalPrice }}</h4>
                                     <a href="#">Patvirtinti</a>
                                 </div>
 
