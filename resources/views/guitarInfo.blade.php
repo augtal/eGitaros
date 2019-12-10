@@ -2,8 +2,13 @@
 
 @section('content')
         <div id="contentLeft">
-            <img src="img/{{$guitar->pavadinimas}}.jpg" alt="{{$guitar->pavadinimas}}" style="width:100%">
-            <a class = "button" href="/guitar/{{$guitar->tipas}}/">Atgal</a>
+            <img src="{{ asset('storage/image/'.$guitar->pavadinimas.'.jpg') }}" alt="{{$guitar->pavadinimas}}.jpg" style="width:100%"><br>
+            <a class = "button" href="/guitar/{{$guitar->tipas}}/">Atgal</a><br><br><br>
+            @guest
+            @else
+            <a class = "button" href="/guitar/{{$guitar->tipas}}/{{$guitar->produkto_ID}}/edit">Redaguoti gitara</a><br><br><br>
+            <a class = "button" href="/guitar/{{$guitar->tipas}}/{{$guitar->produkto_ID}}/delete">Salinti gitara</a><br>
+            @endguest
         </div>
 
         <div id="contentRight">

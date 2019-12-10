@@ -20,6 +20,7 @@ class Produktas extends Migration
             $table->integer('spalva')->unsigned();
             $table->decimal('kaina', 7, 2);
             $table->text('aprasas');
+            $table->timestamps();
 
             $table->foreign('tipas')
                 ->references('tipo_ID')

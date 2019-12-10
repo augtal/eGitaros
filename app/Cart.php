@@ -23,7 +23,8 @@ class Cart
                         'price' => $item->kaina,
                         'item' => $item,
                         'img' => $item->pavadinimas,
-                        'pav' => $item->pavadinimas
+                        'pav' => $item->pavadinimas,
+                        'id' => $id
                       ];
 
         if($this->items){
@@ -45,7 +46,8 @@ class Cart
                         'price' => $item->kaina,
                         'item' => $item,
                         'img' => $item->pavadinimas,
-                        'pav' => $item->pavadinimas
+                        'pav' => $item->pavadinimas,
+                        'id' => $id
                       ];
 
         if($this->items){

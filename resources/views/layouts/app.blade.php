@@ -40,7 +40,7 @@
             @else
                 <a class="userInfo">Vartotojas: {{ Auth::user()->name }}</a>
 
-                <a class="button" href="#">Mano Uzsakymai</a>
+                <a class="button" href="/orders">Uzsakymu sarasas</a>
 
                 <a class="button" href="{{ route('logout') }}" onclick="event.preventDefault();
                 document.getElementById('logout-form').submit();">Atsijungti</a>
@@ -87,7 +87,7 @@
                                         </tr>
                                     @foreach(session('cart')->items as $id => $preke)
                                         <tr>
-                                            <th><img src="{{ asset('storage/images/'.$preke['pav'].'.jpg') }}" alt="{{$preke['pav']}}.jpg" height="47" width="47"></th>
+                                            <th><img src="{{ asset('storage/image/'.$preke['pav'].'.jpg') }}" alt="{{$preke['pav']}}.jpg" style="width:50px;height:60px;"></th>
                                             <th>{{$preke['pav']}}</th>
                                             <th>{{$preke['price'] }}</th>
                                             <th>{{$preke['qty'] }}</th>
@@ -97,7 +97,7 @@
                                     </table>
 
                                     <h4>Bendra suma: {{ Session::get('cart')->totalPrice }}</h4>
-                                    <a href="#">Patvirtinti</a>
+                                    <a href="/guitar/cart">Patvirtinti</a>
                                 </div>
 
                                 @else
@@ -106,6 +106,24 @@
                             </div>
                     </div>
                 </div>
+
+                @if (\Session::has('success'))
+                    <div class="alert alert-success">
+                        <p>{!! \Session::get('success') !!}</p>
+                    </div>
+                @endif
+
+                @if (count($errors) > 0)
+                    <div class="alert alert-danger">
+                        <p>Jūsų įvedamuose duomenyse yra klaidu:</p>
+                        <ul>
+                            @foreach ($errors->all() as $error)
+                                <li>{{ $error }}</li>
+                            @endforeach
+                        </ul>
+                    </div>
+                @endif
+
 
                 @yield('content')
 

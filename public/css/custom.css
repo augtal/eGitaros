@@ -525,6 +525,14 @@ table {
     float: left;
 }
 
+#menu ul{
+    list-style: none;
+}
+
+#menu li{
+    display: inline;
+}
+
 h2#pageTitle {
     font-size: 26px;
     margin: 10px 0px 0px 15px;

@@ -14,10 +14,12 @@ class UzsakymoPrekes extends Migration
     public function up()
     {
         Schema::create('uzsakymo_prekes', function (Blueprint $table) {
+            $table->increments('uzsakymo_prekes_ID');
             $table->integer('uzsakymo_ID')->unsigned();
             $table->integer('preke')->unsigned();
             $table->integer('kiekis');
             $table->decimal('kaina', 7, 2);
+            $table->timestamps();
 
             $table->foreign('uzsakymo_ID')
                 ->references('uzsakymo_ID')

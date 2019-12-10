@@ -17,6 +17,7 @@ class Uzsakymas extends Migration
             $table->increments('uzsakymo_ID');
             $table->decimal('kaina', 7, 2);
             $table->integer('padalinys')->unsigned();
+            $table->timestamps();
 
             $table->foreign('padalinys')
                 ->references('padalinio_ID')

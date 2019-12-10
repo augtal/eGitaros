@@ -19,6 +19,7 @@ class Padalinys extends Migration
             $table->string('adresas', 30);
             $table->string('telefonas', 10);
             $table->string('epastas', 30);
+            $table->timestamps();
         });
     }
 
